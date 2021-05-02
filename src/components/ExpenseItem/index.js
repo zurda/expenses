@@ -1,5 +1,5 @@
-import "./ExpenseItem.css";
-import Card from "./Card";
+import "./index.css";
+import Card from "../Card";
 
 const ExpenseItem = ({ item }) => {
   const date = item.date.toISOString().substring(0, 10);
