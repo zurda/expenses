@@ -23,9 +23,13 @@ const ExpenseList = ({ expenses }) => {
         selectedYear={selectedYear}
       />
       <Card className="expense-list">
-        {filteredExpenses?.map((item) => (
-          <ExpenseItem key={item.id} item={item} />
-        ))}
+        {filteredExpenses.length ? (
+          filteredExpenses.map((item) => (
+            <ExpenseItem key={item.id} item={item} />
+          ))
+        ) : (
+          <p>No items found</p>
+        )}
       </Card>
     </>
   );

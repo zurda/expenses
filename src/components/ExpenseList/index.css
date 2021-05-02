@@ -2,3 +2,7 @@
   background-color: black;
   padding: 0.3rem 1rem;
 }
+
+.expense-list p {
+  color: white;
+}
