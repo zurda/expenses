@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { ButtonStyled } from "../Button/index.styled";
 import { ControlsStyled, ActionsStyled } from "./index.styled";
 
 const ExpenseForm = (props) => {
@@ -60,7 +61,7 @@ const ExpenseForm = (props) => {
         </ControlsStyled>
       </ControlsStyled>
       <ActionsStyled>
-        <button type="submit">Add Expense</button>
+        <ButtonStyled type="submit">Add Expense</ButtonStyled>
       </ActionsStyled>
     </form>
   );
