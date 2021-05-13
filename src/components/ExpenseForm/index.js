@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./index.css";
+import { ControlsStyled, ActionsStyled } from "./index.styled";
 
 const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
@@ -33,12 +33,12 @@ const ExpenseForm = (props) => {
   };
   return (
     <form onSubmit={submitHandler}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
+      <ControlsStyled>
+        <ControlsStyled>
           <label>Title</label>
           <input type="text" onChange={titleChangeHandler} value={title} />
-        </div>
-        <div className="new-expense__control">
+        </ControlsStyled>
+        <ControlsStyled>
           <label>Amount</label>
           <input
             type="number"
@@ -47,8 +47,8 @@ const ExpenseForm = (props) => {
             onChange={amountChangeHandler}
             value={amount}
           />
-        </div>
-        <div className="new-expense__control">
+        </ControlsStyled>
+        <ControlsStyled>
           <label>Date</label>
           <input
             type="date"
@@ -57,11 +57,11 @@ const ExpenseForm = (props) => {
             onChange={dateChangeHandler}
             value={date}
           />
-        </div>
-      </div>
-      <div className="new-expense__actions">
+        </ControlsStyled>
+      </ControlsStyled>
+      <ActionsStyled>
         <button type="submit">Add Expense</button>
-      </div>
+      </ActionsStyled>
     </form>
   );
 };

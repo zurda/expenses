@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ExpenseForm from "../ExpenseForm";
-import "./index.css";
+import { NewExpenseStyled } from "./index.styled.js";
 
 const NewExpense = (props) => {
   const [showNewItemForm, setShowNewItemForm] = useState(false);
@@ -13,7 +13,7 @@ const NewExpense = (props) => {
     props.onAddExpense(expenseData);
   };
   return (
-    <div className="new-expense">
+    <NewExpenseStyled>
       {showNewItemForm ? (
         <>
           <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
@@ -24,7 +24,7 @@ const NewExpense = (props) => {
           Add New Expense
         </button>
       )}
-    </div>
+    </NewExpenseStyled>
   );
 };
 

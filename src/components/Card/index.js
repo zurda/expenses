@@ -1,9 +1,7 @@
-import "./index.css";
+import { CardStyled } from "./index.styled.js";
 
-function Card(props) {
-  const classes = "card " + props.className;
-
-  return <div className={classes}>{props.children}</div>;
+function Card({ children }) {
+  return <CardStyled>{children}</CardStyled>;
 }
 
 export default Card;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./index.css";
+import { ExpenseListStyled } from "./index.styled.js";
 import Card from "../Card";
 import ExpenseItem from "../ExpenseItem";
 import ExpensesFilter from "../ExpensesFilter";
@@ -25,14 +25,16 @@ const ExpenseList = ({ expenses }) => {
         selectedYear={selectedYear}
       />
       <ExpenseChart expenses={filteredExpenses} />
-      <Card className="expense-list">
-        {filteredExpenses.length ? (
-          filteredExpenses.map((item) => (
-            <ExpenseItem key={item.id} item={item} />
-          ))
-        ) : (
-          <p>No items found</p>
-        )}
+      <Card>
+        <ExpenseListStyled>
+          {filteredExpenses.length ? (
+            filteredExpenses.map((item) => (
+              <ExpenseItem key={item.id} item={item} />
+            ))
+          ) : (
+            <p>No items found</p>
+          )}
+        </ExpenseListStyled>
       </Card>
     </>
   );

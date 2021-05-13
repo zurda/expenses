@@ -1,4 +1,9 @@
-import "./index.css";
+import {
+  ChartBarStyled,
+  InnerStyled,
+  FillStyled,
+  LabelStyled,
+} from "./index.styled.js";
 
 const ChartBar = ({ value, maxValue, label }) => {
   let barFillHeight = "0%";
@@ -6,15 +11,12 @@ const ChartBar = ({ value, maxValue, label }) => {
     barFillHeight = `${Math.round((value * 100) / maxValue)}%`;
   }
   return (
-    <div className="chart-bar">
-      <div className="chart-bar__inner">
-        <div
-          className="chart-bar__fill"
-          style={{ height: barFillHeight }}
-        ></div>
-      </div>
-      <div className="chart-bar__label">{label}</div>
-    </div>
+    <ChartBarStyled>
+      <InnerStyled>
+        <FillStyled style={{ height: barFillHeight }}></FillStyled>
+      </InnerStyled>
+      <LabelStyled>{label}</LabelStyled>
+    </ChartBarStyled>
   );
 };
 

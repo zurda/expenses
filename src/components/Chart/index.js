@@ -1,12 +1,12 @@
 import ChartBar from "../ChartBar";
-import "./index.css";
+import { ChartStyled } from "./index.styled.js";
 
 const Chart = ({ dataPoints }) => {
   const valueArray = dataPoints.map((dataPoint) => dataPoint.value);
   const totalMaximum = Math.max(...valueArray);
 
   return (
-    <div className="chart">
+    <ChartStyled>
       {dataPoints.map((dp) => (
         <ChartBar
           key={dp.label}
@@ -15,7 +15,7 @@ const Chart = ({ dataPoints }) => {
           maxValue={totalMaximum}
         />
       ))}
-    </div>
+    </ChartStyled>
   );
 };
 export default Chart;

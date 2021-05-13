@@ -1,9 +1,9 @@
-import "./index.css";
+import { ExpensesFilterStyled, ControlStyled } from "./index.styled.js";
 
 const ExpensesFilter = ({ onSelectYear, selectedYear }) => {
   return (
-    <div className="expenses-filter">
-      <div className="expenses-filter__control">
+    <ExpensesFilterStyled>
+      <ControlStyled>
         <label>Filter by year</label>
         <select
           onChange={(e) => onSelectYear(e.target.value)}
@@ -14,8 +14,8 @@ const ExpensesFilter = ({ onSelectYear, selectedYear }) => {
           <option value="2020">2020</option>
           <option value="2019">2019</option>
         </select>
-      </div>
-    </div>
+      </ControlStyled>
+    </ExpensesFilterStyled>
   );
 };
 
