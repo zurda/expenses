@@ -14,6 +14,12 @@ const initialExpenses = [
   {
     id: "e3",
     title: "Car Insurance",
+    amount: 24.67,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: "e5",
+    title: "Car Insurance",
     amount: 294.67,
     date: new Date(2021, 2, 28),
   },

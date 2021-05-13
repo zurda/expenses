@@ -4,6 +4,7 @@ import "./index.css";
 import Card from "../Card";
 import ExpenseItem from "../ExpenseItem";
 import ExpensesFilter from "../ExpensesFilter";
+import ExpenseChart from "../ExpensesChart";
 
 const ExpenseList = ({ expenses }) => {
   const [selectedYear, setSelectedYear] = useState("2021");
@@ -15,6 +16,7 @@ const ExpenseList = ({ expenses }) => {
   const filteredExpenses = expenses.filter(
     (item) => item.date.getFullYear().toString() === selectedYear
   );
+  console.log(filteredExpenses);
 
   return (
     <>
@@ -22,6 +24,7 @@ const ExpenseList = ({ expenses }) => {
         onSelectYear={selectYearHandler}
         selectedYear={selectedYear}
       />
+      <ExpenseChart expenses={filteredExpenses} />
       <Card className="expense-list">
         {filteredExpenses.length ? (
           filteredExpenses.map((item) => (
